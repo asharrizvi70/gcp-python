@@ -14,7 +14,7 @@ for bucket in buckets:
         bashCommand = "gcloud storage cp gs://logs-bucket-021/"+file_name+" /home/ubuntu/Downloaded_blobs/"
         process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
-        client.upload_file('/home/ubuntu/Downloaded_blobs/'+file_name,'decoy-logs-s3-generic-565524-gcp',bucket.name+x.strftime("-%d-%m-%Y-[%H:00]"))
+        client.upload_file('/home/ubuntu/Downloaded_blobs/'+file_name,'',bucket.name+x.strftime("-%d-%m-%Y-[%H:00]"))
     except:
         continue
 for i in os.listdir('/home/ubuntu/Downloaded_blobs/'):
